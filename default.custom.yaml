@@ -1,6 +1,0 @@
-patch:
-  schema_list:
-    - {schema: ziranma_flyx}
-    - {schema: double_pinyin}
-    - {schema: luna_pinyin}
-    - {schema: cangjie5}
