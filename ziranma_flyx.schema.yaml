@@ -1,0 +1,93 @@
+# Rime schema settings
+# encoding: utf-8
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: ziranma_flyx
+  name: 鹤形自然码
+  version: "150319"
+
+punctuator:
+  import_preset: symbols
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator@custom_phrase
+    - table_translator
+    - reverse_lookup_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: 'abcdefghjiklmnopqrstuvwxyz'
+  delimiter: " '"
+  max_code_length: 4
+  auto_select: true
+  auto_select_unique_candidate: true
+
+translator:
+  dictionary: ziranma_flyx
+  enable_charset_filter: false
+  disable_user_dict_for_patterns:
+    - "^z.*$"
+  enable_completion: false
+  enable_sentence: true
+  enable_user_dict: false
+  dictionary: ziranma_flyx
+
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_sentence: false
+
+reverse_lookup:
+  dictionary: stroke_simp
+  enable_completion: true
+  prefix: "`"
+  suffix: "'"
+  tips: 〔笔画〕
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+
+ascii_composer:
+  switch_key:
+    Shift_L: clear
+
+key_binder:
+    bindings:
+    - { when: has_menu, accept: ";", send: 2 }
+    - { when: has_menu, accept: "'", send: 3 }
+    - { when: composing, accept: "Tab", send: ; }
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "`[a-z]*'?$"
+    punct: "^/([a-z]+|[0-9])$"
+	
