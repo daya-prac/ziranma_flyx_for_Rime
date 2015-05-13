@@ -1,11 +1,15 @@
 # Rime extended dictionary
 # encoding: utf-8
+# ziranma_flyx - 鹤形自然码
+# Author: Zonek
+
 ---
 name: ziranma_flyx.add
 version: "2015.03.28"
 sort: original
 use_preset_vocabulary: false
 ...
+
 按	a  1024
 吧	b  1024
 笨	bf  1024

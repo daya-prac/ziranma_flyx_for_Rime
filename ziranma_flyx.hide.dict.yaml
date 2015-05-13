@@ -1,11 +1,15 @@
 # Rime extended dictionary
 # encoding: utf-8
+# ziranma_flyx - 鹤形自然码
+# Author: Zonek
+
 ---
 name: ziranma_flyx.hide
 version: "2015.03.28"
 sort: by_weight
 use_preset_vocabulary: false
 ...
+
 挨	aifu  15814
 唉	aiku  15813
 哀	aiwy  15812
