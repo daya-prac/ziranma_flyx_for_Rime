@@ -11,7 +11,8 @@ use_preset_vocabulary :  false
 import_tables:
 #  - ziranma_flyx.hide
   - ziranma_flyx.add
-...啊	a  16383
+...
+啊	a  16383
 阿	aa  16382
 阿坝	aab  16231
 阿爸	aaba  16230
